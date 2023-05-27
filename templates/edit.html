@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edytuj użytkownika</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Edytuj użytkownika</h1>
+    <form method="POST" action="/edit/{{ user[0] }}">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" value="{{ user[3] }}" required><br>
+        <input type="submit" value="Zapisz">
+    </form>
+</body>
+</html>
