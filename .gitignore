@@ -18,3 +18,4 @@ settings_local.py
 *.log
 *.tmp
 *.bak
+backup/mysql.sock

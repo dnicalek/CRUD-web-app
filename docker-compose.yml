@@ -1,0 +1,27 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - ./static:/app/static
+  db:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=users
+    ports:
+      - 3306:3306
+    volumes:
+      - db_data:/var/lib/mysql
+  redis:
+    image: redis
+
+volumes:
+  db_data:
